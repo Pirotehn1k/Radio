@@ -2,6 +2,16 @@ public class Radio {
     private int currentVolume;
     private int currentChannel;
 
+    private int maxChannel;
+
+    public Radio() {
+        maxChannel = 10;
+    }
+
+    public Radio(int channelsNumber){
+        maxChannel = channelsNumber - 1;
+    }
+
     public int getCurrentVolume() {
         return currentVolume;
     }
@@ -12,7 +22,7 @@ public class Radio {
 
 
     public void setCurrentChannel(int newCurrentChannel) {
-        if (newCurrentChannel > 9) {
+        if (newCurrentChannel > maxChannel) {
             return;
         }
         if (newCurrentChannel < 0) {
@@ -26,7 +36,7 @@ public class Radio {
     }
 
     public void nextChannel() {
-        if (currentChannel == 9) {
+        if (currentChannel == maxChannel) {
             currentChannel = 0;
         } else {
             currentChannel = currentChannel + 1;
@@ -35,7 +45,7 @@ public class Radio {
 
     public void prevChannel() {
         if (currentChannel == 0) {
-            currentChannel = 9;
+            currentChannel = maxChannel;
         } else {
             currentChannel = currentChannel - 1;
         }
