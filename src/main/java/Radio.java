@@ -5,7 +5,7 @@ public class Radio {
     private int maxChannel;
 
     public Radio() {
-        maxChannel = 10;
+        maxChannel = 9;
     }
 
     public Radio(int channelsNumber){

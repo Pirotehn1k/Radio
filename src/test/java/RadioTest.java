@@ -89,6 +89,7 @@ public class RadioTest {
     @Test
     public void switchChannelBelowMin() {
         Radio radio = new Radio();
+        radio.setCurrentChannel(0);
 
 
         radio.prevChannel();
